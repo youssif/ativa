@@ -1,0 +1,29 @@
+.row_fluid
+  .span1
+  .span10
+    %h2
+      Active Projects
+      %small= link_to "Add Project", new_project_url
+
+.row-fluid
+  .span2
+  .span8
+    %table.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th.span6 Project Name
+          %th.span6 Last Updated
+      %tbody
+        - @projects.each do |project|
+          %tr
+            %td= link_to project.name, project
+            %td= project.updated_at.strftime("%m/%d/%y at %I:%M%P")
+  .span2
+
+
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+@import "twitter/bootstrap/bootstrap";
+body {
+	padding-top: 60px;
+}
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings");
+@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not
+//       have the proper paths. So for now we use the absolute path.
+@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot");
+@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-path("fontawesome-webfont.svg");
+
+
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+
+
+.sideNav a {
+    color: #333;
+}
+
+.sideNav a:hover {
+	color: #08C;
+	text-decoration: none;
+}
+
+.sideNav ul {
+    text-align: left;
+    padding-left: 10px;
+    line-height: 30px;
+    list-style: none;
+    margin: 0;
+    margin-left: 10px
+}
+
+.sideNav li {
+    text-align: left;
+    padding-left: 50px;
+    line-height: 25px;
+    font-size: 18px;
+    list-style: none;
+}
+
+
+a {
+    color: #333;
+}
+
+a:hover {
+	color: #08C;
+	text-decoration: none;
+}
+
+.navbar .nav > li > a {
+    padding: 20px 15px 10px;
+}
+
+.navbar .nav > li > a:hover {
+    color: #08C;
+    text-decoration: none;
+}
+
+.phase .active a {
+    color: #08C;
+}
+
+#active {
+    color: #08C;
+}
+
+.sideNav .active a {
+    color: #08C;
+}
+
+// The attachment nav tabs on the project view page
+
+.nav-tabs > .active > a {
+color: #08C;
+background-color: white;
+border: 1px solid #DDD;
+border-bottom-color: transparent;
+cursor: default;
+}
+
+.nav-tabs > .active > a:hover {
+color: #08C;
+background-color: white;
+border: 1px solid #DDD;
+border-bottom-color: transparent;
+cursor: default;
+}
+
+
+
