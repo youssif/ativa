@@ -6,13 +6,57 @@
 			%li.active phase
 		%ul.active Options
 		%ul.active Contract
-
-
-
 .sideNavcontent
 	.row-fluid
-		.span1
-		.progress.progress-striped.success.span10
-			.bar{:style => "width: 34%;"}
-		.span1
+		.span12
+			.row-fluid
+				.page-header.pagination-centered
+					%h1= @project.name
+			/ Progress Bar
+			.row-fluid
+				.span1
+				.progress.progress-striped.success.span10
+					.bar{:style => "width: 43%;"}
+				.span1
+			/ end
+			/ The five phases
+			.row-fluid
+				.span1
+				- ['phase 1', 'phase 1', 'phase 1', 'phase 1', 'phase 1'].each do |phase|
+					.span2.pagination-centered.phase
+						%div{:class => 'active'}= link_to phase, "#"
+				.span1
+			.row-fluid
+				.span1
+				.span10
+					%h2
+						Some Phase
+						%small= link_to 'add call', '#'
+				.span1
+			- 5.times do |x|
+				.row-fluid
+					.span1
+					.span1
+						%ul.media-list
+							%li.media
+								%a.pull-left{:href => "user_url(post.user)"}
+									= image_tag "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c163.36.546.546/s160x160/14986_10151378874079699_689397579_n.jpg", :class => "media-object img-rounded pagination-centered", :width => "60"
+									%p.pagination-centered Shaan
+					.media-body.span8
+						%h4.media-heading
+							Post Title
+							%small= @project.updated_at.strftime("%m/%d/%y at %I:%M%P")
+						%p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+
+
+
+
+
+
+
+
+
+
+
+
 
