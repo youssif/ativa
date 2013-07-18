@@ -11,3 +11,58 @@
  *= require_self
  *= require_tree .
  */
+
+.sideNavcontent {
+    padding-left: 80px;
+}
+
+a {
+    text-decoration: none;
+    cursor: default;
+    background: none;
+    color: red;
+
+}
+
+a:hover {
+    background-color: none;
+    color: #08C;
+    text-decoration: none;
+    background-color: none;
+
+}
+
+.navbar-fixed-top
+{
+ height:50px;   
+}
+.content
+{
+    overflow: hidden;
+    position: absolute;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+    top: 75px; 
+    bottom: 0px;
+    left: 230px;
+    right: 0px;
+    padding: 0px 10px;
+    overflow: auto;
+}
+.sideNav
+{
+    padding: 80px 0;
+    position: fixed;
+    left: 0px;
+    top: 40px; /* same as .content top*/
+    bottom: 0px;
+    width: 200px;
+    background-color: #f1f1f1;
+    border-right: 1px solid #bbc0c4; /*z-index: 1020;  10 less than .navbar-fixed to prevent any overlap */
+    text-align:center;
+    font-size:11px;
+    font-weight:bold;
+
+}​
