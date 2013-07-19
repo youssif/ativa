@@ -3,16 +3,18 @@
 		%ul.active Overview
 		%ul
 			Phase
-			- @phases.each do |phase|
-			%li.active phase
+			- 5.times do |phase|
+				%li.active phase
 		%ul.active Options
 		%ul.active Contract
 .sideNavcontent
 	.row-fluid
 		.span12
 			.row-fluid
-				.page-header.pagination-centered
+				.span1
+				.page-header.pagination-centered.span10
 					%h1= @project.name
+				.span1
 			/ Progress Bar
 			.row-fluid
 				.span1
@@ -48,6 +50,7 @@
 							Post Title
 							%small= @project.updated_at.strftime("%m/%d/%y at %I:%M%P")
 						%p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						%p= @project.phases
 
 
 
