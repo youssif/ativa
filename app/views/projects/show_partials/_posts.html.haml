@@ -1,4 +1,4 @@
-- 5.times do |x|
+- @project.posts.each do |post|
 	.row-fluid
 		.span1
 		.span1
@@ -9,6 +9,6 @@
 						%p.pagination-centered Shaan
 		.media-body.span8
 			%h4.media-heading
-				= link_to "Post Title", project_partial_url(@project.id,'post')
-				%small= @project.updated_at.strftime("%m/%d/%y at %I:%M%P")
-			%p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				= link_to post.title, project_partial_url(@project.id, @project.phase.name, 'post')
+				%small= post.updated_at.strftime("%m/%d/%y at %I:%M%P")
+			%p= post.phase.name + post.message

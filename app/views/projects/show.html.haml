@@ -3,7 +3,7 @@
 		%ul.active Overview
 		%ul
 			Phase
-			- @project.phases.each do |phase|
+			- @phases.each do |phase|
 				%li.active= phase.name
 		%ul.active Options
 		%ul.active Contract
@@ -13,19 +13,19 @@
 			.row-fluid
 				.span1
 				.page-header.pagination-centered.span10
-					%h1= link_to @project.name, project_path(@project.id)
+					%h1= link_to @project.name, project_partial_path(@project.id, @project.phase.name, "posts")
 				.span1
 			/ Progress Bar
 			.row-fluid
 				.span1
 				.progress.progress-striped.success.span10
-					.bar{:style => "width: #{9+rand(5)*20}%;"}
+					.bar{:style => "width: #{@project.phase.progress_level}%;"}
 				.span1
 			/ end
 			/ The five phases
 			.row-fluid
 				.span1
-				- @project.phases.each do |phase|
+				- @phases.each do |phase|
 					.span2.pagination-centered.phase
 						%div{:class => 'active'}= link_to phase.name, "#"
 				.span1
@@ -33,7 +33,7 @@
 				.span1
 				.span10
 					%h2
-						Some Phase
+						= @project.phase.name.capitalize + " Phase"
 						%small= link_to 'add call', '#'
 				.span1
 			= if @show_partial then render "projects/show_partials/#{@show_partial}" else render "projects/show_partials/posts"  end

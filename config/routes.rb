@@ -1,9 +1,7 @@
 Ativa::Application.routes.draw do
-  resources :projects
-  get 'projects/:id/:show_partial' => 'projects#show', as: 'project_partial'
-
-
   root to: "projects#index"
+  resources :projects
+  get 'projects/:id/:phase/:show_partial' => 'projects#show', as: 'project_partial'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

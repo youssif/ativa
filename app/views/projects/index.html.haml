@@ -16,7 +16,9 @@
       %tbody
         - @projects.each do |project|
           %tr
-            %td= link_to project.name, project
+            %td
+              = link_to project.name, project_partial_url(project.id, project.phase.name, 'posts')
+              = "(#{project.phase.name})"
             %td= project.updated_at.strftime("%m/%d/%y at %I:%M%P")
   .span2
 

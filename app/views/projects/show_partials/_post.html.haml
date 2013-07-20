@@ -3,11 +3,11 @@
 	.span10
 		.active
 			%h4
-				Post Title
-				%small= Project.last.updated_at.strftime("%m/%d/%y at %I:%M%P")
+				@post.title
+				%small
+			%p
 	.span1
 .row_fluid
 	.span1
-	.span10
-		%iframe{height: "1000", width:"100%", frameBorder: "0", src: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c163.36.546.546/s160x160/14986_10151378874079699_689397579_n.jpg"}
-	.span1
+	.span11
+		%iframe{height: "1000", width:"100%", frameBorder: "0", src: "http://www.cran.r-project.org/doc/manuals/R-intro.pdf"}
