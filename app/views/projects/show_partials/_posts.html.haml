@@ -1,0 +1,14 @@
+- 5.times do |x|
+	.row-fluid
+		.span1
+		.span1
+			%ul.media-list
+				%li.media
+					%a.pull-left{:href => "user_url(post.user)"}
+						= image_tag "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c163.36.546.546/s160x160/14986_10151378874079699_689397579_n.jpg", :class => "media-object img-rounded pagination-centered", :width => "60"
+						%p.pagination-centered Shaan
+		.media-body.span8
+			%h4.media-heading
+				= link_to "Post Title", project_partial_url(@project.id,'post')
+				%small= @project.updated_at.strftime("%m/%d/%y at %I:%M%P")
+			%p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

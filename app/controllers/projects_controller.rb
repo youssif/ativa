@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
-    @phases = @project.phases
+    @show_partial = params[:show_partial]
 
     respond_to do |format|
       format.html # show.html.erb

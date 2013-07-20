@@ -17,6 +17,12 @@ projects = [
 	'Harsh is the Best'
 ]
 
+phases = ['onboarding','creative', 'design', 'development', 'implementation']
+
+
 projects.each do |project|
 	Project.create(name: project)
+	phases.each do |phase|
+		Project.last.phases.create(name: phase)
+	end
 end

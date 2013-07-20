@@ -1,5 +1,7 @@
 Ativa::Application.routes.draw do
   resources :projects
+  get 'projects/:id/:show_partial' => 'projects#show', as: 'project_partial'
+
 
   root to: "projects#index"
 

@@ -3,8 +3,8 @@
 		%ul.active Overview
 		%ul
 			Phase
-			- 5.times do |phase|
-				%li.active phase
+			- @project.phases.each do |phase|
+				%li.active= phase.name
 		%ul.active Options
 		%ul.active Contract
 .sideNavcontent
@@ -13,21 +13,21 @@
 			.row-fluid
 				.span1
 				.page-header.pagination-centered.span10
-					%h1= @project.name
+					%h1= link_to @project.name, project_path(@project.id)
 				.span1
 			/ Progress Bar
 			.row-fluid
 				.span1
 				.progress.progress-striped.success.span10
-					.bar{:style => "width: 43%;"}
+					.bar{:style => "width: #{9+rand(5)*20}%;"}
 				.span1
 			/ end
 			/ The five phases
 			.row-fluid
 				.span1
-				- ['phase 1', 'phase 1', 'phase 1', 'phase 1', 'phase 1'].each do |phase|
+				- @project.phases.each do |phase|
 					.span2.pagination-centered.phase
-						%div{:class => 'active'}= link_to phase, "#"
+						%div{:class => 'active'}= link_to phase.name, "#"
 				.span1
 			.row-fluid
 				.span1
@@ -36,21 +36,7 @@
 						Some Phase
 						%small= link_to 'add call', '#'
 				.span1
-			- 5.times do |x|
-				.row-fluid
-					.span1
-					.span1
-						%ul.media-list
-							%li.media
-								%a.pull-left{:href => "user_url(post.user)"}
-									= image_tag "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c163.36.546.546/s160x160/14986_10151378874079699_689397579_n.jpg", :class => "media-object img-rounded pagination-centered", :width => "60"
-									%p.pagination-centered Shaan
-					.media-body.span8
-						%h4.media-heading
-							Post Title
-							%small= @project.updated_at.strftime("%m/%d/%y at %I:%M%P")
-						%p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						%p= @project.phases
+			= if @show_partial then render "projects/show_partials/#{@show_partial}" else render "projects/show_partials/posts"  end
 
 
 
