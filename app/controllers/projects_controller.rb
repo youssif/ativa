@@ -24,6 +24,8 @@ class ProjectsController < ApplicationController
       @post = Post.find(params[:post_id])
     elsif @show_partial == 'new_post'
       @post = Post.new
+    elsif @show_partial == 'edit_post'
+      @post = Post.find(params[:post_id])
     end
 
 

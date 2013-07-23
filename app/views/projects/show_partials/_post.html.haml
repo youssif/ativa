@@ -5,6 +5,7 @@
 			%h4
 				= @post.title
 				%small= @post.updated_at.strftime("%m/%d/%y at %I:%M%P")
+				%small= link_to 'edit', project_partial_url(@project.id, params[:phase], 'edit_post', post_id: @post.id)
 			%p
 	.span1
 .row_fluid
