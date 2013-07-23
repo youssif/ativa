@@ -14,6 +14,13 @@
 				.span1
 				.page-header.pagination-centered.span10
 					%h1= link_to @project.name, project_partial_path(@project.id, @project.phase.name, "posts")
+					.btn-group
+						%button.btn.dropdown-toggle{"data-toggle" => "dropdown"}
+							Phase
+							%span.caret
+						%ul.dropdown-menu
+							- ['what','who','when'].each do |phase|
+								%li= link_to phase, "#"
 				.span1
 			/ Progress Bar
 			.row-fluid
@@ -21,7 +28,6 @@
 				.progress.progress-striped.success.span10
 					.bar{:style => "width: #{@project.phase.progress_level}%;"}
 				.span1
-			/ end
 			/ The five phases
 			.row-fluid
 				.span1
@@ -34,7 +40,7 @@
 				.span10
 					%h2
 						= @project.phase.name.capitalize + " Phase"
-						%small= link_to 'add call', '#'
+						%small= link_to 'add post', project_partial_path(@project.id, @project.phase.name, 'new_post')
 				.span1
 			= if @show_partial then render "projects/show_partials/#{@show_partial}" else render "projects/show_partials/posts"  end
 

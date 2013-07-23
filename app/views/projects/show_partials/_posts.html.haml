@@ -1,4 +1,4 @@
-- @project.posts.each do |post|
+- @posts.each do |post|
 	.row-fluid
 		.span1
 		.span1
@@ -9,6 +9,6 @@
 						%p.pagination-centered Shaan
 		.media-body.span8
 			%h4.media-heading
-				= link_to post.title, project_partial_url(@project.id, @project.phase.name, 'post')
+				= link_to post.title, project_partial_url(@project.id, @project.phase.name, 'post', post_id: post.id)
 				%small= post.updated_at.strftime("%m/%d/%y at %I:%M%P")
-			%p= post.phase.name + post.message
+			%p= post.phase.name + post.snippet

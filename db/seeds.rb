@@ -22,7 +22,9 @@ projects = [
 	'ATX Jobs', 
 	'Connect2Good',
 	'Bring Up',
-	'Harsh is the Best'
+	'Harsh is the Cool'
+	'Matt is Better'
+	'MakerSquare'
 ]
 
 projects.each do |project|

@@ -15,8 +15,12 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @phases = Phase.all
+
+    @posts = @project.posts.where(phase_id: Phase.find_by_name(params[:phase]).id)
+
     @show_partial = params[:show_partial]
-    
+    if @show_partial == 'post' then @post = Post.find(params[:post_id]) end
+
 
     respond_to do |format|
       format.html # show.html.erb

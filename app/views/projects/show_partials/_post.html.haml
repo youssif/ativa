@@ -3,11 +3,11 @@
 	.span10
 		.active
 			%h4
-				@post.title
-				%small
+				= @post.title
+				%small= @post.updated_at.strftime("%m/%d/%y at %I:%M%P")
 			%p
 	.span1
 .row_fluid
 	.span1
 	.span11
-		%iframe{height: "1000", width:"100%", frameBorder: "0", src: "http://www.cran.r-project.org/doc/manuals/R-intro.pdf"}
+		%iframe{height: "1000", width:"100%", frameBorder: "0", src: @post.attachment}
