@@ -27,13 +27,12 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to project_partial_path(@post.project.id, @post.phase.name, 'post', post_id: @post.id), notice: 'Post was successfully updated.' }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.html { redirect_to project_partial_path(@post.project.id, @post.phase.name, 'post', post_id: @post.id), notice: "Umm, we weren't able to update this post" }
       end
     end
+
   end
 
   # DELETE /posts/1
