@@ -7,8 +7,11 @@
 					%a.pull-left{:href => "user_url(post.user)"}
 						= image_tag "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c163.36.546.546/s160x160/14986_10151378874079699_689397579_n.jpg", :class => "media-object img-rounded pagination-centered", :width => "60"
 						%p.pagination-centered Shaan
-		.media-body.span8
-			%h4.media-heading
-				= link_to post.title, project_partial_url(@project.id, params[:phase], 'post', post_id: post.id)
-				%small= post.updated_at.strftime("%m/%d/%y at %I:%M%P")
-			%p= post.snippet
+		.media-body
+			.span8
+				%h4.media-heading
+					= link_to post.title, project_partial_url(@project.id, params[:phase], 'post', post_id: post.id)
+					%small= post.updated_at.strftime("%m/%d/%y at %I:%M%P")
+				%p= post.snippet
+			.span2
+				= image_tag post.attachment_url(:thumb)
