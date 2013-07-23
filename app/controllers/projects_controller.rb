@@ -16,10 +16,15 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @phases = Phase.all
 
-    @posts = @project.posts.where(phase_id: Phase.find_by_name(params[:phase]).id)
-
     @show_partial = params[:show_partial]
-    if @show_partial == 'post' then @post = Post.find(params[:post_id]) end
+    
+    if @show_partial == 'posts'
+      @posts = @project.posts.where(phase_id: Phase.find_by_name(params[:phase]).id).order
+    elsif @show_partial == 'post'
+      @post = Post.find(params[:post_id])
+    elsif @show_partial == 'new_post'
+      @post = Post.new
+    end
 
 
     respond_to do |format|
@@ -86,5 +91,14 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url }
       format.json { head :no_content }
     end
+  end
+
+  def set_phase
+    project = Project.find(params[:id])
+    project.phase_id = Phase.find_by_name(params[:phase]).id
+    project.save
+
+    redirect_to project_partial_url(project.id, project.phase.name, 'posts')
+    
   end
 end

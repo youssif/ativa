@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   belongs_to :project
   belongs_to :phase
 
+  default_scope order('created_at DESC')
+
   def snippet
     message_size = 90 + rand(150)
     snippet = self.message.truncate(message_size, :separator => ' ')

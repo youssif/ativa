@@ -9,6 +9,6 @@
 						%p.pagination-centered Shaan
 		.media-body.span8
 			%h4.media-heading
-				= link_to post.title, project_partial_url(@project.id, @project.phase.name, 'post', post_id: post.id)
+				= link_to post.title, project_partial_url(@project.id, params[:phase], 'post', post_id: post.id)
 				%small= post.updated_at.strftime("%m/%d/%y at %I:%M%P")
-			%p= post.phase.name + post.snippet
+			%p= post.snippet

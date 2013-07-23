@@ -23,7 +23,7 @@ end
 gem 'jquery-rails'
 
 gem 'haml'
-
+gem 'haml-rails'
 gem 'therubyracer', :platforms => :ruby
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'

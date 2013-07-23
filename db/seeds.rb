@@ -51,7 +51,7 @@ Project.all.each do |project|
 			Post.create(
 				message: messages[rand(4)],
 				attachment: attachments[rand(4)],
-				title: "#{phase.name.capitalize} Revision #{10 - num}",
+				title: "#{phase.name.capitalize} Revision #{num - 10}",
 				project_id: project.id,
 				phase_id: phase.id
 			)

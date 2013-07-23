@@ -19,28 +19,29 @@
 							Phase
 							%span.caret
 						%ul.dropdown-menu
-							- ['what','who','when'].each do |phase|
-								%li= link_to phase, "#"
+							- @phases.each do |phase|
+								%li= link_to phase.name, set_phase_url(@project.id, phase.name)
 				.span1
 			/ Progress Bar
 			.row-fluid
 				.span1
 				.progress.progress-striped.success.span10
-					.bar{:style => "width: #{@project.phase.progress_level}%;"}
+					.bar{:style => "width: #{progress_bar(@project.phase.name)}%;"}
 				.span1
 			/ The five phases
 			.row-fluid
 				.span1
 				- @phases.each do |phase|
 					.span2.pagination-centered.phase
-						%div{:class => 'active'}= link_to phase.name, "#"
+						%div{:class => "#{if params[:phase] == phase.name then 'active' end}"}
+							= link_to phase.name, project_partial_url(@project.id, phase.name, 'posts')
 				.span1
 			.row-fluid
 				.span1
 				.span10
 					%h2
-						= @project.phase.name.capitalize + " Phase"
-						%small= link_to 'add post', project_partial_path(@project.id, @project.phase.name, 'new_post')
+						= params[:phase].capitalize + " Phase"
+						%small= link_to 'add post', project_partial_path(@project.id, params[:phase], 'new_post')
 				.span1
 			= if @show_partial then render "projects/show_partials/#{@show_partial}" else render "projects/show_partials/posts"  end
 
