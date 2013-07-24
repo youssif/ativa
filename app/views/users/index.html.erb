@@ -1,0 +1,5 @@
+<h1>Check out my friends</h1>
+<% @users.each do |u| %>
+	<h3><%= link_to u.name, u %></h3>
+	<p>Email at <%= u.email %></p>
+<% end %>
