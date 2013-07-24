@@ -14,4 +14,3 @@
 					%small= post.updated_at.strftime("%m/%d/%y at %I:%M%P")
 				%p= post.snippet
 			.span2
-				= if post.attachment? then image_tag post.attachment_url(:thumb) end

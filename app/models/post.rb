@@ -5,8 +5,6 @@ class Post < ActiveRecord::Base
 
   default_scope order('created_at DESC')
 
-  mount_uploader(:attachment, ImageUploader)
-
   def snippet
     message_size = 90 + rand(150)
     snippet = self.message.truncate(message_size, :separator => ' ')
