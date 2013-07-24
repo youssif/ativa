@@ -15,7 +15,6 @@ phases = ['onboarding','creative', 'design', 'development', 'implementation']
 phases.each do |phase|
 	Phase.create(name: phase)
 end
-
 projects = [
 	'Mother Flocker',
 	'Gifanator',
@@ -30,6 +29,8 @@ projects = [
 projects.each do |project|
 	Project.create(name: project, phase_id: Phase.first.id)
 end
+
+puts "Added projects"
 
 messages = [
 	"Mousepads grammarians hailinator what Taylor Sager bootstrap Shannon, Heroku soda! Induction toss The best way to attract women to coding is when they're girls. Support up blog: potluck framework error! Alfred workshop coffee A should Krista whiteboard board, issues create! Student fatfinger toss backpacks; unicorns milk map calendar challenges. Use fat photoshop window Nature Nathaniel Lydia - container. Yoga JQuery everywhere in damn rake, Alfred happy? Inheritance Dropbox what Austin be shit pizza, Uno read punctuation? Jenga else we couch test array idea instance shit; charge.",
@@ -61,3 +62,5 @@ Project.all.each do |project|
 		end
 	end
 end
+
+puts "Added posts to every project"

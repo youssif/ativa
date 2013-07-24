@@ -12,5 +12,4 @@
 	.span1
 	.span11
 		%p= @post.message
-		/ %iframe{height: "1000", width:"100%", frameBorder: "0", src: @post.attachment}
 		= image_tag @post.attachment, height: "1000", width:"100%"
