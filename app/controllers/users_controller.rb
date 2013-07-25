@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  
+
   def new
-	@user = User.new
+	 @user = User.new
   end
 
   def show
@@ -9,7 +11,7 @@ class UsersController < ApplicationController
 
   def create
 	  @user = User.new(params[:user])
-	  if @user.save
+    if @user.save
 		  flash[:success] = "Welcome to my awesome app!"
 		  redirect_to @user
 	  else
@@ -18,6 +20,6 @@ class UsersController < ApplicationController
   end
 
   def index
-	@users = User.all
+	 @users = User.all
   end
 end
