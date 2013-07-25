@@ -26,10 +26,10 @@ class Post < ActiveRecord::Base
 			"http://images.wikia.com/fanfiction/images/4/4e/Youre_gonna_die_clown_-_Happy_Gilmore.jpg",
 			"http://upload.wikimedia.org/wikipedia/commons/f/f4/Chicago_Bears_vs_Tennessee_Titans_11-09-08.jpg"
 		]
-  		random_image = random_images[rand(random_images.count)]
+  		random_image = random_images[self.id % 7]
   		return random_image
   	end
   end
-  
+
 end
 
